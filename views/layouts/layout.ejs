@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ATX Snowpocalypse Resource Map</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="/styles/importer.css">
+    <link rel="stylesheet" href="/styles/pages/homepage.css">
+    <!--STYLES END-->
+  </head>
+
+  <body>
+    <div id="modal">
+      <div class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeModal()">&times;</a>
+        <div class="overlay-content">
+          <form id="form-container">
+            <p id="modal-location-name"></p>
+            <p id="modal-location-address"></p>
+
+            <div>
+              <label for="form-water">Does this location have water</label>
+              <select name="form-water" id="form-water" onchange="validateForm()">
+                <option selected value="idk">Select an answer</option>
+                <option value="yes">yes</option>
+                <option value="no">no</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="form-water">Does this location have electricity</label>
+              <select name="form-electricity" id="form-electricity" onchange="validateForm()">
+                <option selected value="idk">Select an answer</option>
+                <option value="yes">yes</option>
+                <option value="no">no</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="form-water">Is this an unused business with their lights on</label>
+              <select name="form-naughty" id="form-naughty" onchange="validateForm()">
+                <option selected value="no">no</option>
+                <option value="yes">yes</option>
+              </select>
+            </div>
+
+            <div id="submit-button">
+              <input type="button" onclick="submitRecord()" value="Save or Update this information on map">
+            </div>
+
+          </form>
+          <div id="thanks-container"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="map"></div>
+    <%- body %>
+
+
+    <!--TEMPLATES-->
+    <!--TEMPLATES END-->
+
+    <!--SCRIPTS-->
+    <script src="/dependencies/sails.io.js"></script>
+    <script src="/js/dependencies/axios.js"></script>
+    <script src="/js/dependencies/lodash.js"></script>
+    <script src="/js/dependencies/math.js"></script>
+    <!--SCRIPTS END-->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmBz8hvwFWG7RbeM3A1q7auD7vEHeR20o&libraries=places,visualization&callback=initMap"></script>
+
+  </body>
+</html>
