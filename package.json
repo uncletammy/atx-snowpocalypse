@@ -27,15 +27,15 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/tink/atx-snowpocalypse.git"
+    "url": "git://github.com/uncletammy/atx-snowpocalypse.git"
   },
-  "author": "tink",
+  "author": "uncletammy",
   "license": "ISC",
   "engines": {
     "node": "^10.5"
   },
   "bugs": {
-    "url": "https://github.com/tink/atx-snowpocalypse/issues"
+    "url": "https://github.com/uncletammy/atx-snowpocalypse/issues"
   },
-  "homepage": "https://github.com/tink/atx-snowpocalypse#readme"
+  "homepage": "https://github.com/uncletammy/atx-snowpocalypse#readme"
 }
