@@ -59,6 +59,15 @@
 
           </form>
           <div id="thanks-container"></div>
+          <div id="privacy-container">
+            <h1>Privacy</h1>
+            <div class="words">
+              <p>
+                This application stores in it's database the addresses given during user submissions.  It stores them solely for the purpose of displaying them on a map.  They will never be sold to anyone and will be deleted when this application is taken offline.  No personally identifiable information is saved by us.  At any time, any user may audit our entire database by visiting https://snowpocalypse.info/location.
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -111,6 +120,10 @@
             <div class="subject">Electricity</div>
             <button onclick="toggleHeatmap('electricityOff')" id="button-electricityOff" class="showing" style="background-color:rgba(212, 33, 33, 1)">Hide Outages</button>
             <button onclick="toggleHeatmap('electricityOn')" id="button-electricityOn" class="showing" style="background-color:rgba(142, 214, 118, 1)">Hide Working</button>
+        </div>
+        <div class="privacy-container">
+            <div class="subject" onclick="openModal(true)">See Privacy Policy</div>
+            <!-- <button onclick="toggleHeatmap('naughty')" id="button-naughty" class="showing" style="background-color:rgba(235, 151, 92, 1)">Hide Them</button> -->
         </div>
         <div class="group" style="display:none">
             <div class="subject">Careless Businesses</div>

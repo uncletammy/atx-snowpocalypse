@@ -115,12 +115,21 @@ window.mapLocations = {
   }
 };
 
-function openModal() {
+function openModal(privacy) {
   document.getElementById('modal').style.width = window.innerWidth+'px';
   document.getElementById('modal').style.height = window.innerHeight+'px';
+
+  if (privacy) {
+    console.log('showing privacy policy');
+    document.getElementById('privacy-container').style.display = 'inherit';
+    document.getElementById('form-container').style.display = 'none';
+  }
+  else {
+    document.getElementById('modal-location-address').innerText = window.currentLocationSelected['formatted_address'];
+    document.getElementById('modal-location-name').innerText = window.currentLocationSelected.name;
+  }
+
   document.getElementById('modal').style.display = 'inherit';
-  document.getElementById('modal-location-address').innerText = window.currentLocationSelected['formatted_address'];
-  document.getElementById('modal-location-name').innerText = window.currentLocationSelected.name;
 
 }
 
@@ -188,6 +197,9 @@ function closeModal() {
   document.getElementById('modal').style.width = '0px';
   document.getElementById('modal').style.height = '0px';
   document.getElementById('modal').style.display = 'none';
+  document.getElementById('privacy-container').style.display = 'none';
+  document.getElementById('form-container').style.display = 'inherit';
+
 }
 
 function getCenter() {
