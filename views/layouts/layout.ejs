@@ -42,7 +42,7 @@
                 </label>
               </div>
 
-              <div class="modal-question">
+              <div class="modal-question" style="display:none">
                 <label for="form-water">Is this a business with lights on?
                   <select name="form-naughty" id="form-naughty" onchange="validateForm()">
                     <option selected value="no">No</option>
@@ -112,7 +112,7 @@
             <button onclick="toggleHeatmap('electricityOff')" id="button-electricityOff" class="showing" style="background-color:rgba(212, 33, 33, 1)">Hide Outages</button>
             <button onclick="toggleHeatmap('electricityOn')" id="button-electricityOn" class="showing" style="background-color:rgba(142, 214, 118, 1)">Hide Working</button>
         </div>
-        <div class="group">
+        <div class="group" style="display:none">
             <div class="subject">Careless Businesses</div>
             <button onclick="toggleHeatmap('naughty')" id="button-naughty" class="showing" style="background-color:rgba(235, 151, 92, 1)">Hide Them</button>
         </div>
