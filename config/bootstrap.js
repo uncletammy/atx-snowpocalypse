@@ -11,11 +11,11 @@
 
 module.exports.bootstrap = async function() {
 
-  let locationCount = await Location.count();
+  // let locationCount = await Location.count();
 
-  if (locationCount <=1) {
-    await Location.createEach(sails.config.db);
-  }
+  // if (locationCount <=1) {
+  //   await Location.createEach(sails.config.db);
+  // }
 
   return;
 
