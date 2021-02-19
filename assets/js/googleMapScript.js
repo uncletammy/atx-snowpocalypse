@@ -320,18 +320,18 @@ function loadHeatMaps() {
       dissipating: window.heatmaps.electricityOn.config.dissipating
   });
 
-  window.heatmaps.naughty.map = new google
-    .maps
-    .visualization
-    .HeatmapLayer({
-      data: window.mapLocations.naughty.latlngs,
-      map: window.googleMap,
-      radius: window.heatmaps.naughty.config.radius,
-      opacity: window.heatmaps.naughty.config.opacity,
-      gradient: window.heatmaps.naughty.config.gradient,
-      //maxIntensity: window.heatmaps.naughty.config.maxIntensity,
-      dissipating: window.heatmaps.naughty.config.dissipating
-  });
+  // window.heatmaps.naughty.map = new google
+  //   .maps
+  //   .visualization
+  //   .HeatmapLayer({
+  //     data: window.mapLocations.naughty.latlngs,
+  //     map: window.googleMap,
+  //     radius: window.heatmaps.naughty.config.radius,
+  //     opacity: window.heatmaps.naughty.config.opacity,
+  //     gradient: window.heatmaps.naughty.config.gradient,
+  //     //maxIntensity: window.heatmaps.naughty.config.maxIntensity,
+  //     dissipating: window.heatmaps.naughty.config.dissipating
+  // });
 
   // toggleHeatmap('waterOff')
   // toggleHeatmap('waterOn')
