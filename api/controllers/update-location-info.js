@@ -8,8 +8,7 @@ module.exports = function(req,res) {
   .destroy({
     address: allParams.address.toLowerCase(),
   })
-  .then(() => {
-
+  .exec(function(nope) {
     Location
     .create({
       address: allParams.address.toLowerCase(),
@@ -21,16 +20,8 @@ module.exports = function(req,res) {
       naughty: allParams.naughty,
       name: allParams.name
     })
-    .catch(() => {
-      return res.serverError();
-    })
-    .then(() => {
+    .exec(function(nope, locationRecord) {
       return res.ok();
-    })
-
-  })
-  .catch(() => {
-    return res.serverError();
-  })
-
+    });
+  });
 }
