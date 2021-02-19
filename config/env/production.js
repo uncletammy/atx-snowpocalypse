@@ -33,8 +33,10 @@ module.exports = {
     default: {
       url: process.env.DATABASE_URL,
       adapter: 'sails-postgresql',
-      ssl: true
-    }
+      ssl: {
+        sslmode: 'require',
+        rejectUnauthorized: false,
+      }
   },
 
 
