@@ -8,7 +8,6 @@ module.exports = function(req,res) {
       return res.serverError();
     }
 
-    console.log('Got locations:', allLocations);
     return res.ok(allLocations);
 
   });
