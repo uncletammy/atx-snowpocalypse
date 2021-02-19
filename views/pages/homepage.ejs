@@ -1,20 +1,4 @@
 <div id="homepage">
-    <div id="floating-panel">
-      <div class="group">
-          <div class="subject">Water</div>
-          <button onclick="toggleHeatmap('waterOff')" id="button-waterOff" class="showing" style="background-color:rgba(226, 151, 191, 1)">Hide Outages</button>
-          <button onclick="toggleHeatmap('waterOn')" id="button-waterOn" class="showing" style="background-color:rgba(141, 172, 221, 1)">Hide Working</button>
-      </div>
-      <div class="group">
-          <div class="subject">Electricity</div>
-          <button onclick="toggleHeatmap('electricityOff')" id="button-electricityOff" class="showing" style="background-color:rgba(212, 33, 33, 1)">Hide Outages</button>
-          <button onclick="toggleHeatmap('electricityOn')" id="button-electricityOn" class="showing" style="background-color:rgba(142, 214, 118, 1)">Hide Working</button>
-      </div>
-      <div class="group">
-          <div class="subject">Careless Businesses</div>
-          <button onclick="toggleHeatmap('naughty')" id="button-naughty" class="showing" style="background-color:rgba(235, 151, 92, 1)">Show Them</button>
-      </div>
-    </div>
     <script>
       window.currentLocationSelected;
 
@@ -392,20 +376,20 @@
           openModal();
         });
 
-        // Sets a listener on a radio button to change the filter type on Places
-        // Autocomplete.
-        function setupClickListener(id, types) {
-          const radioButton = document.getElementById(id);
-          radioButton.addEventListener("click", () => {
-            autocomplete.setTypes(types);
-            input.value = "";
-          });
-        }
+        // // Sets a listener on a radio button to change the filter type on Places
+        // // Autocomplete.
+        // function setupClickListener(id, types) {
+        //   const radioButton = document.getElementById(id);
+        //   radioButton.addEventListener("click", () => {
+        //     autocomplete.setTypes(types);
+        //     input.value = "";
+        //   });
+        // }
 
-        setupClickListener("changetype-all", []);
-        setupClickListener("changetype-address", ["address"]);
-        setupClickListener("changetype-establishment", ["establishment"]);
-        setupClickListener("changetype-geocode", ["geocode"]);
+        // setupClickListener("changetype-all", []);
+        // setupClickListener("changetype-address", ["address"]);
+        // setupClickListener("changetype-establishment", ["establishment"]);
+        // setupClickListener("changetype-geocode", ["geocode"]);
 
       }
 
@@ -413,7 +397,6 @@
 
         console.log('toggling', someMapName);
         let buttonClicked = document.getElementById('button-'+someMapName);
-        
         if (buttonClicked.classList.contains('showing')) {
           console.log('Now hiding', someMapName);
           buttonClicked.classList.remove('showing');
@@ -435,24 +418,6 @@
     <div class="pac-card" id="pac-card">
       <div>
         <div id="title">Post your utility status</div>
-        <div id="type-selector" class="pac-controls">
-          <input
-            type="radio"
-            name="type"
-            id="changetype-all"
-            checked="checked"
-          />
-          <label for="changetype-all">All</label>
-
-          <input type="radio" name="type" id="changetype-establishment" />
-          <label for="changetype-establishment">Establishments</label>
-
-          <input type="radio" name="type" id="changetype-address" />
-          <label for="changetype-address">Addresses</label>
-
-          <input type="radio" name="type" id="changetype-geocode" />
-          <label for="changetype-geocode">Geocodes</label>
-        </div>
         <br />
       </div>
       <div id="pac-container">

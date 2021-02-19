@@ -22,29 +22,32 @@
             <p id="modal-location-address"></p>
 
             <div>
-              <label for="form-water">Does this location have water</label>
-              <select name="form-water" id="form-water" onchange="validateForm()">
-                <option selected value="idk">Select an answer</option>
-                <option value="yes">yes</option>
-                <option value="no">no</option>
-              </select>
+              <label for="form-water">Does this location have water?
+                <select name="form-water" id="form-water" onchange="validateForm()">
+                  <option selected value="idk">Select</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+              </label>
             </div>
 
             <div>
-              <label for="form-water">Does this location have electricity</label>
-              <select name="form-electricity" id="form-electricity" onchange="validateForm()">
-                <option selected value="idk">Select an answer</option>
-                <option value="yes">yes</option>
-                <option value="no">no</option>
-              </select>
+              <label for="form-water">Does this location have electricity?
+                <select name="form-electricity" id="form-electricity" onchange="validateForm()">
+                  <option selected value="idk">Select</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+              </label>
             </div>
 
             <div>
-              <label for="form-water">Is this an unused business with their lights on</label>
-              <select name="form-naughty" id="form-naughty" onchange="validateForm()">
-                <option selected value="no">no</option>
-                <option value="yes">yes</option>
-              </select>
+              <label for="form-water">Is this an unused business with their lights on?
+                <select name="form-naughty" id="form-naughty" onchange="validateForm()">
+                  <option selected value="no">No</option>
+                  <option value="yes">Yes</option>
+                </select>
+              </label>
             </div>
 
             <div id="submit-button">
@@ -60,14 +63,33 @@
     <div id="map"></div>
     <%- body %>
 
+    <footer class="navbar navbar-light justify-content-between flex-row-reverse" purpose="page-footer">
+      <div id="floating-panel">
+        <div class="group">
+            <div class="subject">Water</div>
+            <button onclick="toggleHeatmap('waterOff')" id="button-waterOff" class="showing" style="background-color:rgba(226, 151, 191, 1)">Hide Outages</button>
+            <button onclick="toggleHeatmap('waterOn')" id="button-waterOn" class="showing" style="background-color:rgba(141, 172, 221, 1)">Hide Working</button>
+        </div>
+        <div class="group">
+            <div class="subject">Electricity</div>
+            <button onclick="toggleHeatmap('electricityOff')" id="button-electricityOff" class="showing" style="background-color:rgba(212, 33, 33, 1)">Hide Outages</button>
+            <button onclick="toggleHeatmap('electricityOn')" id="button-electricityOn" class="showing" style="background-color:rgba(142, 214, 118, 1)">Hide Working</button>
+        </div>
+        <div class="group">
+            <div class="subject">Careless Businesses</div>
+            <button onclick="toggleHeatmap('naughty')" id="button-naughty" class="showing" style="background-color:rgba(235, 151, 92, 1)">Hide Them</button>
+        </div>
+      </div>
+    </footer>
+  </div>
 
     <!--TEMPLATES-->
     <!--TEMPLATES END-->
 
     <!--SCRIPTS-->
     <script src="/dependencies/sails.io.js"></script>
-    <script src="/js/dependencies/axios.js"></script>
-    <script src="/js/dependencies/lodash.js"></script>
+    <script src="/dependencies/lodash.js"></script>
+    <script src="/dependencies/axios.js"></script>
     <!--SCRIPTS END-->
     <script src="https://pagecdn.io/lib/mathjs/7.1.0/math.js"></script>
     <script src="https://pagecdn.io/lib/axios/v0.20.0-0/axios.js" crossorigin="anonymous"></script>
