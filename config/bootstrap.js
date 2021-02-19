@@ -14,14 +14,7 @@ module.exports.bootstrap = async function() {
   let locationCount = await Location.count();
 
   if (locationCount <=1) {
-    await Location.create({
-      address: '4900 Creekline Dr, Austin, TX 78745, USA'.toLowerCase(),
-      lat : 30.21455,
-      lng : -97.77618079999999,
-      water: true,
-      electricity: true,
-      naughty: false
-    });
+    await Location.createEach(sails.config.db);
   }
 
   return;

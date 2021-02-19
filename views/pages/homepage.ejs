@@ -8,10 +8,10 @@
         'waterOff': {
           map: undefined,
           config: {
-            maxIntensity: 2,
+            maxIntensity: 4,
             dissipating: true,
-            radius: 35,
-            opacity: .4,
+            radius: 25,
+            opacity: .55,
             // Magenta
             gradient: [
               "rgba(255, 255, 255, 0)",
@@ -23,10 +23,10 @@
         'waterOn': {
           map: undefined,
           config: {
-            maxIntensity: 2,
+            maxIntensity: 4,
             dissipating: true,
-            radius: 35,
-            opacity: .4,
+            radius: 25,
+            opacity: .55,
             // Blue
             gradient: [
               "rgba(255, 255, 255, 0)",
@@ -38,25 +38,27 @@
         'electricityOff': {
           map: undefined,
           config: {
-            maxIntensity: 2,
+            maxIntensity: 4,
             dissipating: true,
-            radius: 35,
-            opacity: .4,
+            radius: 25,
+            opacity: .55,
             // Red
             gradient: [
               "rgba(255, 255, 255, 0)",
+              "rgba(212, 85, 85, 1)",
               "rgba(212, 33, 33, 1)",
-              "rgba(157, 7, 7, 1)"
+              "rgba(157, 7, 7, 1)",
+              "rgba(155, 0, 0, 1)"
             ]
           }
         },
         'electricityOn': {
           map: undefined,
           config: {
-            maxIntensity: 2,
+            maxIntensity: 4,
             dissipating: true,
-            radius: 35,
-            opacity: .4,
+            radius: 25,
+            opacity: .55,
             // Green
             gradient: [
               "rgba(255, 255, 255, 0)",
@@ -68,10 +70,10 @@
         'naughty': {
           map: undefined,
           config: {
-            maxIntensity: 2,
+            maxIntensity: 4,
             dissipating: true,
-            radius: 35,
-            opacity: .5,
+            radius: 25,
+            opacity: .55,
             // Orange
             gradient: [
               "rgba(255, 255, 255, 0)",
@@ -182,8 +184,8 @@
 
       var getCenter = function() {
         return {
-          lat: math.round(math.mean(_.compact(window.mapLocations.all.lats)), 7),
-          lng: math.round(math.mean(_.compact(window.mapLocations.all.lngs)), 7)
+          lat: math.round(math.median(_.compact(window.mapLocations.all.lats)), 7),
+          lng: math.round(math.median(_.compact(window.mapLocations.all.lngs)), 7)
         };
       };
 
@@ -243,7 +245,7 @@
         console.log('loading all maps', window.mapLocations.all);
 
         window.googleMap = new google.maps.Map(document.getElementById('map'), {
-          zoom: 13,
+          zoom: 11,
           center: getCenter(window.mapLocations.all.lats, window.mapLocations.all.lngs),
           mapTypeId: 'roadmap'
         });
@@ -257,7 +259,7 @@
             radius: window.heatmaps.waterOff.config.radius,
             opacity: window.heatmaps.waterOff.config.opacity,
             gradient: window.heatmaps.waterOff.config.gradient,
-            maxIntensity: window.heatmaps.waterOff.config.maxIntensity,
+            //maxIntensity: window.heatmaps.waterOff.config.maxIntensity,
             dissipating: window.heatmaps.waterOff.config.dissipating
         });
 
@@ -270,7 +272,7 @@
             radius: window.heatmaps.waterOn.config.radius,
             opacity: window.heatmaps.waterOn.config.opacity,
             gradient: window.heatmaps.waterOn.config.gradient,
-            // maxIntensity: window.heatmaps.waterOn.config.maxIntensity,
+            //maxIntensity: window.heatmaps.waterOn.config.maxIntensity,
             dissipating: window.heatmaps.waterOn.config.dissipating
         });
 
@@ -283,7 +285,7 @@
             radius: window.heatmaps.electricityOff.config.radius,
             opacity: window.heatmaps.electricityOff.config.opacity,
             gradient: window.heatmaps.electricityOff.config.gradient,
-            maxIntensity: window.heatmaps.electricityOff.config.maxIntensity,
+            //maxIntensity: window.heatmaps.electricityOff.config.maxIntensity,
             dissipating: window.heatmaps.electricityOff.config.dissipating
         });
 
@@ -296,7 +298,7 @@
             radius: window.heatmaps.electricityOn.config.radius,
             opacity: window.heatmaps.electricityOn.config.opacity,
             gradient: window.heatmaps.electricityOn.config.gradient,
-            maxIntensity: window.heatmaps.electricityOn.config.maxIntensity,
+            //maxIntensity: window.heatmaps.electricityOn.config.maxIntensity,
             dissipating: window.heatmaps.electricityOn.config.dissipating
         });
 
@@ -309,7 +311,7 @@
             radius: window.heatmaps.naughty.config.radius,
             opacity: window.heatmaps.naughty.config.opacity,
             gradient: window.heatmaps.naughty.config.gradient,
-            maxIntensity: window.heatmaps.naughty.config.maxIntensity,
+            //maxIntensity: window.heatmaps.naughty.config.maxIntensity,
             dissipating: window.heatmaps.naughty.config.dissipating
         });
 
